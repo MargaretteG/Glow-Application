@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:glow_application/about.dart';
 import 'package:glow_application/forms/bookingForm.dart';
 import 'package:glow_application/widgets/appbarProducts.dart';
 import 'package:glow_application/widgets/containers.dart';
@@ -193,21 +194,35 @@ class _InfoBanner extends StatelessWidget {
       width: double.infinity,
       color: const Color(0xFFFFF4ED),
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-      child: Row(
-        children: const [
-          Icon(Icons.storefront_outlined, color: Color(0xFF4B2F34)),
-          SizedBox(width: 8),
-          Text(
-            'For Store Pick-up',
-            style: TextStyle(
-              fontSize: 15,
-              color: Color(0xFF4B2F34),
-              fontWeight: FontWeight.w100,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AboutPage(),
             ),
+          );
+        },
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: const [
+              Icon(Icons.storefront_outlined, color: Color(0xFF4B2F34)),
+              SizedBox(width: 8),
+              Text(
+                'Visit Our Clinic',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Color(0xFF4B2F34),
+                  fontWeight: FontWeight.w100,
+                ),
+              ),
+              Spacer(),
+              Icon(Icons.navigate_next_rounded, color: Color(0xFF4B2F34)),
+            ],
           ),
-          Spacer(),
-          Icon(Icons.navigate_next_rounded, color: Color(0xFF4B2F34)),
-        ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:glow_application/about.dart';
 import 'package:glow_application/forms/productForm.dart';
 import 'package:glow_application/widgets/appbarProducts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -139,22 +140,39 @@ class ProductPage extends StatelessWidget {
                   horizontal: 30,
                   vertical: 15,
                 ),
-                child: Row(
-                  children: const [
-                    Icon(Icons.storefront_outlined, color: Color(0xFF4B2F34)),
-                    SizedBox(width: 8),
-                    Text(
-                      'Visit Our Clinic',
-                      style: TextStyle(
-                        height: 1.1,
-                        fontSize: 15,
-                        color: Color(0xFF4B2F34),
-                        fontWeight: FontWeight.w100,
-                      ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutPage()),
+                    );
+                  },
+                  borderRadius: BorderRadius.circular(12),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.storefront_outlined,
+                          color: Color(0xFF4B2F34),
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Visit Our Clinic',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF4B2F34),
+                            fontWeight: FontWeight.w100,
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.navigate_next_rounded,
+                          color: Color(0xFF4B2F34),
+                        ),
+                      ],
                     ),
-                    Spacer(),
-                    Icon(Icons.navigate_next_rounded, color: Color(0xFF4B2F34)),
-                  ],
+                  ),
                 ),
               ),
 
